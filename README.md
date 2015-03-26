@@ -25,7 +25,6 @@ $(function() {
   notify('success',  'BB:NOTIFY:SUCCESS');
 });
 
-
 ```
 
 ### Want to make it better?
@@ -37,7 +36,6 @@ git clone https://github.com/mrsum/backbone-notify.git
   && cd $_ 
   && npm i 
   && gulp watch
-
 
 ```
 
@@ -77,7 +75,6 @@ git clone https://github.com/mrsum/backbone-notify.git
 
 .notify.success       {background-color: rgba(12, 129, 9, 0.8);}
 .notify.success:hover {background-color: rgba(12, 129, 9, 0.6);}
-
 
 ```
 ### WTF is ES6?
