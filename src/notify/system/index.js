@@ -31,8 +31,6 @@ module.exports = class Notify extends Backbone.View {
     this.registry     = [];
     //avaliavble notify types
     this.defaults     = ['success', 'info', 'warning', 'danger', 'response'];
-    //patching BB fetch && save
-    //if (this.options.patching) this.preparePatching();
     //listen for moving
     this.collection.listenTo(this.collection, 'add', this.move);
     this.collection.listenTo(this.collection, 'change:hidden', this.move);
