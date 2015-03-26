@@ -14,7 +14,7 @@ var reload      = browserSync.reload;
 var config = {
   entryFile: './src/app.js',
   outputDir: './dist/',
-  outputFile: 'app.js'
+  outputFile: 'index.js'
 };
 
 // clean the output directory
