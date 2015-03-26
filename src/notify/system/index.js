@@ -23,17 +23,19 @@ module.exports = class Notify extends Backbone.View {
     this.collection = new Backbone.Collection();
     //extend options
     this.options    = _.extend({
-      autohide: true, //autohide after
-      delay: 4 * 1000, //time before message will hided
-      patching: false
+      autohide: true,     //autohide after
+      delay: 4 * 1000,    //time before message will hided
+      position: 'bottom', //
+      margin: 10,
+      start: 10
     }, opts);
     //registry of notify types
     this.registry     = [];
     //avaliavble notify types
     this.defaults     = ['success', 'info', 'warning', 'danger', 'response'];
     //listen for moving
-    this.collection.listenTo(this.collection, 'add', this.move);
-    this.collection.listenTo(this.collection, 'change:hidden', this.move);
+    this.listenTo(this.collection, 'add', this.move);
+    this.listenTo(this.collection, 'change:hidden', this.move);
   }
 
   /**
@@ -43,8 +45,8 @@ module.exports = class Notify extends Backbone.View {
    */
   register() {
     this.defaults.map((item) => {
-      this.listenTo(Backbone, 'notify:' + item, (text) => {
-        let view = new NotifyView({text, item}, this.options);
+      this.listenTo(Backbone, 'notify:' + item, (text, options = {}) => {
+        let view = new NotifyView({text, item}, _.extend(this.options, options));
         view.render();
         this.collection.add(view.model);
       });
@@ -59,7 +61,7 @@ module.exports = class Notify extends Backbone.View {
    * @return {[type]}
    */
   settings(opts) {
-    this.options = _.extend(this.options, opts);
+    this.options  = _.extend(this.options, opts);
     return this;
   }
 
@@ -71,17 +73,16 @@ module.exports = class Notify extends Backbone.View {
   unregister(type) {}
 
   /**
-   * Move showable items to down
+   * Move showable items to down || up
    * @return {[type]} [description]
    */
   move() {
-    let bottom    = 10;
-    let margin    = 10;
-    let showable  = this.where({ hidden: false });
-    showable.map((item) => {
+    let start     = this.options.start;
+    let margin    = this.options.margin;
+    this.collection.where({ hidden: false }).map((item) => {
       let el = item.get('el');
-      el.css('bottom', bottom);
-      bottom = bottom + el.outerHeight() + margin;
+      el.css(this.options.position, start);
+      start = start + el.outerHeight() + margin;
     });
   }
 
