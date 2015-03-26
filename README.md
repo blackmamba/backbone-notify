@@ -32,10 +32,54 @@ $(function() {
 Sure, i'll glad to see pull requests ^_^
 
 ```sh
-git clone https://github.com/mrsum/backbone-notify.git && cd $_ && npm i && gulp watch
+
+git clone https://github.com/mrsum/backbone-notify.git 
+  && cd $_ 
+  && npm i 
+  && gulp watch
+
 
 ```
 
+###Customize
+```css
+
+.notify {
+  right: 10px;
+  color: #fff;
+  position: fixed;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+.notify:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.notify, .close {
+  cursor: pointer;
+}
+.notify .close {
+  font-size: 14px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.notify.danger        {background-color: rgba(131, 0, 25, 0.8);}
+.notify.danger:hover  {background-color: rgba(131, 0, 25, 0.6);}
+
+.notify.warning       {background-color: rgba(155, 21, 21, 0.8);}
+.notify.warning:hover {background-color: rgba(155, 21, 21, 0.6);}
+
+.notify.info          {background-color: rgba(9, 93, 129, 0.8);}
+.notify.info:hover    {background-color: rgba(9, 93, 129, 0.6);}
+
+.notify.success       {background-color: rgba(12, 129, 9, 0.8);}
+.notify.success:hover {background-color: rgba(12, 129, 9, 0.6);}
+
+
+```
 ### WTF is ES6?
 Simply, the next version of JavaScript that contains some really cool features. You might check out some of these:
 
