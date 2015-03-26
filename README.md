@@ -28,13 +28,20 @@ $(function() {
 
 ```
 
+### Want to make it better?
+Sure, i'll glad to see pull requests ^_^
+
+```sh
+git clone https://github.com/mrsum/backbone-notify.git && cd $_ && npm i && gulp watch
+
+```
+
 ### WTF is ES6?
 Simply, the next version of JavaScript that contains some really cool features. You might check out some of these:
 
 - https://wiki.mozilla.org/ES6_plans
 - http://globaldev.co.uk/2013/09/es6-part-1/
 - http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175
-
 
 ### Info about dev tools 
 
