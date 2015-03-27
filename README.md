@@ -4,6 +4,8 @@ Simple and lightweight Backbone notification system uses ES6 (babel.js)
 
 ### How to use?
 
+```javascript
+
 'use strict';
 
 //Depends
@@ -37,6 +39,7 @@ $(function() {
     position: 'bottom'
   });
 });
+
 
 ```
 
