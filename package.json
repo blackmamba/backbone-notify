@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "description": "Backbone notification system based on BB trigers",
   "homepage": "http://mrsum.github.io/backbone-notify/",
+  "main": "src/notify/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/mrsum/backbone-notify.git"
   },
   "bugs": {
     "url": "https://github.com/mrsum/backbone-notify/issues"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "devDependencies": {
     "babelify": "~5.0.3",
@@ -21,7 +25,10 @@
     "lodash": "^2.4.1",
     "rimraf": "~2.2.8",
     "watchify": "^2.1.1",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-source-stream": "^1.0.0",
+    "chai": "~2.2.0",
+    "mocha": "~2.2.1",
+    "sinon": "~1.14.1"
   },
   "author": "M. Chernobrov <me@mrsum.ru>",
   "license": "MIT",
