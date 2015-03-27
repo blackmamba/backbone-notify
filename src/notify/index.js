@@ -22,11 +22,15 @@ module.exports = function(type, text, options = {}) {
  * @return {[type]}        [description]
  */
 module.exports.settings = function(config = {}) {
-  Notify.settings(_.extend({
+
+  let opts = _.extend({
     delay: 5 * 1000,    //how many seconds
     autohide: true,     //set true if u want to hide them
     position: 'bottom', //initial position top || bottom
     margin: 10,         //margin between notifications
     start: 10           //start position from window border top:{start} || bottom:{start}
-  }, config));
+  }, config);
+
+  if (!Notify) new BackboneNotify(opts);
+  else Notify.settings(opts);
 };

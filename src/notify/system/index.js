@@ -24,7 +24,7 @@ module.exports = class Notify extends Backbone.View {
     //extend options
     this.options    = _.extend({
       autohide: true,     //autohide after
-      delay: 4 * 1000,    //time before message will hided
+      delay: 2 * 1000,    //time before message will hided
       position: 'bottom', //
       margin: 10,
       start: 10
@@ -44,9 +44,9 @@ module.exports = class Notify extends Backbone.View {
    * @return {[type]}
    */
   register() {
-    this.defaults.map((item) => {
+    this.defaults.forEach((item) => {
       this.listenTo(Backbone, 'notify:' + item, (text, options = {}) => {
-        let view = new NotifyView({text, item}, _.extend(this.options, options));
+        let view = new NotifyView({text, item}, $.extend({}, this.options, options));
         view.render();
         this.collection.add(view.model);
       });
@@ -77,12 +77,21 @@ module.exports = class Notify extends Backbone.View {
    * @return {[type]} [description]
    */
   move() {
-    let start     = this.options.start;
-    let margin    = this.options.margin;
-    this.collection.where({ hidden: false }).map((item) => {
+    let startTop      = this.options.start;
+    let startBottom   = this.options.start;
+    this.collection.where({ hidden: false }).forEach((item) => {
+      let opts = item.get('options');
       let el = item.get('el');
-      el.css(this.options.position, start);
-      start = start + el.outerHeight() + margin;
+      switch (opts.position){
+        case 'top':
+          el.css(opts.position, startTop);
+          startTop = startTop + el.outerHeight() + opts.margin;
+        break;
+        case 'bottom' :
+          el.css(opts.position, startBottom);
+          startBottom = startBottom + el.outerHeight() + opts.margin;
+        break;
+      }
     });
   }
 

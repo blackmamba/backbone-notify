@@ -22,7 +22,6 @@ module.exports = class NoifyItem extends View {
     this.model      = new NotifyModel({data, options, hidden: false});
     this.className  = 'notify ' + data.item;
     this.template   = require('../templates/alert.jade');
-
     //if autohide is enable
     if (options.autohide) setTimeout(() => {
       this.model.set('hidden', true);
@@ -30,7 +29,6 @@ module.exports = class NoifyItem extends View {
     this.events = {
       'click .close': () => { this.model.set('hidden', true); }
     };
-
     super(data, options);
     //listen change hide attr
     this.listenTo(this.model, 'change:hidden', this.hide);
@@ -41,6 +39,7 @@ module.exports = class NoifyItem extends View {
    * @return {[type]} [description]
    */
   hide() {
+    this.unbind();
     this.$el.remove();
   }
 
