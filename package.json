@@ -2,7 +2,7 @@
   "name": "backbone-notification",
   "version": "0.0.1",
   "description": "Backbone notification system based on BB trigers",
-  "homepage": "https://github.com/thoughtram/es6-6to5-browserify-boilerplate",
+  "homepage": "http://mrsum.github.io/backbone-notify/",
   "repository": {
     "type": "git",
     "url": "git://github.com/mrsum/backbone-notify.git"
