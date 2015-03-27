@@ -8,7 +8,6 @@ Simple and lightweight Backbone notification system uses ES6 (babel.js)
 
 npm i backbone-notify --save
 
-
 ```
 
 ### How to use?
