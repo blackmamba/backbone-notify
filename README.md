@@ -2,6 +2,15 @@
 
 Simple and lightweight Backbone notification system uses ES6 (babel.js)
 
+### NPM package
+
+```bash
+
+npm i backbone-notify --save
+
+
+```
+
 ### How to use?
 
 ```javascript
