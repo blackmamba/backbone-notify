@@ -38,13 +38,21 @@ $(function() {
     autohide: true,
     delay: 6 * 1000
   });
-  notify('info',     'BB:NOTIFY:INFO (hide after 8sec)', {
-    autohide: true,
+  notify('info',     'BB:NOTIFY:INFO (8sec)', {
     delay: 8 * 1000,
-    position: 'bottom'
+    position: 'bottom',
+    css: {
+      'font-size': 14,
+      'font-weight': 'bold'
+    }
   });
-  notify('success',  'BB:NOTIFY:SUCCESS (nonhide)', {
-    position: 'bottom'
+  notify('success',  'BB:NOTIFY:SUCCESS (20sec)', {
+    delay: 20 * 1000,
+    position: 'bottom',
+    css: {
+      'font-size': 15,
+      'font-weight': 'bold'
+    }
   });
 });
 
