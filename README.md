@@ -2,6 +2,14 @@
 
 Simple and lightweight Backbone notification system uses ES6 (babel.js)
 
+### NPM package
+
+```bash
+
+npm i backbone-notify --save
+
+```
+
 ### How to use?
 
 ```javascript
@@ -30,13 +38,21 @@ $(function() {
     autohide: true,
     delay: 6 * 1000
   });
-  notify('info',     'BB:NOTIFY:INFO (hide after 8sec)', {
-    autohide: true,
+  notify('info',     'BB:NOTIFY:INFO (8sec)', {
     delay: 8 * 1000,
-    position: 'bottom'
+    position: 'bottom',
+    css: {
+      'font-size': 14,
+      'font-weight': 'bold'
+    }
   });
-  notify('success',  'BB:NOTIFY:SUCCESS (nonhide)', {
-    position: 'bottom'
+  notify('success',  'BB:NOTIFY:SUCCESS (20sec)', {
+    delay: 20 * 1000,
+    position: 'bottom',
+    css: {
+      'font-size': 15,
+      'font-weight': 'bold'
+    }
   });
 });
 
@@ -55,7 +71,16 @@ git clone https://github.com/mrsum/backbone-notify.git
 
 ```
 
-###Customize
+### Want to compile standalone backbone-notify via Gulp? 
+
+```bash
+
+gulp build
+
+```
+And look into dist/ folder
+
+### Customize
 ```css
 
 .notify {

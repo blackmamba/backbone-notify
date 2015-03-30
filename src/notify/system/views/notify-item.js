@@ -48,7 +48,11 @@ module.exports = class NoifyItem extends View {
    * @return {[type]} [description]
    */
   render() {
+    let options = this.model.get('options');
     this.$el.html(this.template(this.model.toJSON())).appendTo('body');
+    if (options && options.css) {
+      this.$el.css(options.css);
+    }
     this.model.set('el', this.$el);
     return this;
   }

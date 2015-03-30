@@ -6,8 +6,6 @@ const _           = require('underscore');
 const Backbone    = require('backbone');
 const NotifyView  = require('./views/notify-item');
 
-Backbone.$        = $;
-
 /**
  * Notify lib for ED2
  * @type {object}

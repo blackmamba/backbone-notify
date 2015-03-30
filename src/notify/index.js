@@ -4,6 +4,13 @@ const _               = require('underscore');
 const Backbone        = require('backbone');
 const BackboneNotify  = require('./system');
 
+//use jquery inside backbone
+Backbone.$            = $;
+
+/**
+ * new Notify
+ * @type {BackboneNotify}
+ */
 let Notify = new BackboneNotify().register();
 
 /**
