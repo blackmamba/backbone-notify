@@ -32,7 +32,7 @@ $(function() {
     delay: 20 * 1000,
     position: 'bottom',
     css: {
-      'font-size': 15,
+      'font-size': 10,
       'font-weight': 'bold'
     }
   });

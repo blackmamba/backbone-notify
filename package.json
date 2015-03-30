@@ -1,6 +1,6 @@
 {
   "name": "backbone-notify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Backbone notification system based on BB triggers",
   "homepage": "http://mrsum.github.io/backbone-notify/",
   "main": "src/notify/index.js",

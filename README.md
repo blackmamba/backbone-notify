@@ -71,7 +71,16 @@ git clone https://github.com/mrsum/backbone-notify.git
 
 ```
 
-###Customize
+### Want to compile standalone backbone-notify via Gulp? 
+
+```bash
+
+gulp build
+
+```
+And look into dist/ folder
+
+### Customize
 ```css
 
 .notify {
