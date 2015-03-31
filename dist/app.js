@@ -501,7 +501,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 ;var locals_for_with = (locals || {});(function (data) {
-buf.push((jade.escape(null == (jade_interp = data.text) ? "" : jade_interp)) + "<span class=\"close\">&times;</span>");}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined));;return buf.join("");
+buf.push("<span>" + (jade.escape(null == (jade_interp = data.text) ? "" : jade_interp)) + "</span><span class=\"close\">&times;</span>");}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined));;return buf.join("");
 };
 },{"jade/runtime":3}],8:[function(require,module,exports){
 "use strict";
